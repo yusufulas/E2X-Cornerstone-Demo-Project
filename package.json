@@ -1,0 +1,31 @@
+{
+  "name": "E2X Cornerstone Demo",
+  "version": "1.0.0",
+  "description": "This is a simple project that demonstrates e2e testing with using cypress.io and cucumber.js",
+  "main": "index.js",
+  "author": "Yusuf Ulas",
+  "license": "MIT",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cypress/webpack-preprocessor": "^5.17.0",
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^12.5.1",
+    "cypress-multi-reporters": "^1.6.2",
+    "esbuild": "^0.17.10",
+    "mocha-junit-reporter": "^2.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,mjs,ts,tsx}"
+  },
+  "scripts": {
+    "test": "cypress run --e2e --browser chrome --spec **/*.feature",
+    "pretty": "prettier --write \"./**/*.{yml,js,jsx,json}\"",
+    "cy:open": "cypress open --e2e --browser chrome"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber"
+  ]
+}
